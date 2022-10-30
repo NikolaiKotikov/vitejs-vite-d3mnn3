@@ -1,0 +1,79 @@
+@import 'styles';
+
+body {
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #1a1a54 60.43%,
+    #3157f0 81.53%,
+    #6a59cf 100%
+  );
+}
+
+.loader {
+  clip-path: circle(100% at 50% 50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 50px;
+  text-align: center;
+
+  &__count {
+    color: white;
+    font-size: 100px;
+  }
+}
+
+.scroll {
+  position: relative;
+  height: 400vh;
+
+  &__intro {
+    position: sticky;
+    z-index: 2;
+    background-color: white;
+    top: 0;
+    left: 0;
+  }
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 60px;
+}
+
+.grid-wrapper {
+  overflow: hidden;
+  margin-top: -100vh;
+  position: sticky;
+  top: 0;
+}
+
+.grid {
+  --rows-count: 5;
+  --gap: 20px;
+  display: grid;
+  gap: var(--gap);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: var(--gap);
+
+  img {
+    width: calc(100vh / var(--rows-count));
+    height: calc(100vh / var(--rows-count));
+    border-radius: 24px;
+  }
+}
